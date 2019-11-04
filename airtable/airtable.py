@@ -28,6 +28,21 @@ class Airtable() :
             print(e)
         return fields
 
+    def get_records(self) :
+        # Get table records
+        records = []
+        r = requests.get(self.auth()).json()
+        for record in r["records"] :
+            records.append(record)
+        while ("offset" in r) :
+            params = {
+                "offset" : r["offset"]
+            }
+            r = requests.get(self.auth(), params=params).json()
+            for record in r["records"] :
+                records.append(record)
+        return records
+
 def main() :
     parameters = {
         "api_key" : "API_KEY",
