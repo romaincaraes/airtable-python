@@ -55,6 +55,18 @@ class Airtable() :
         self.parameters["table"] = self.parameters["table"].replace(id, "")
         return record
 
+    def create_records(self) :
+        # Create new records in table
+        return
+
+    def update_records(self) :
+        # Update records in table
+        return
+
+    def delete_records(self) :
+        # Delete records in table
+        return
+
 def main() :
     parameters = {
         "api_key" : "API_KEY",
