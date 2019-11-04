@@ -3,24 +3,19 @@
 
 import requests
 
-def auth(parameters) :
-    # Authenticate to a table in a base
-    url = [
-        "https://api.airtable.com/v0",
-        parameters["base"],
-        parameters["table"].replace(" ", "%20")
-        ]
-    api_key = parameters["api_key"]
-    url = "/".join(url) + "?api_key=" + api_key
-    return url
+class Airtable() :
+    def __init__(self, parameters) :
+        self.parameters = parameters
 
 def main() :
     parameters = {
         "api_key" : "API_KEY",
         "base" : "BASE_CODE",
-        "table" : "TABLE NAME"
+        "table" : "TABLE_NAME"
     }
-    api = auth(parameters)
+    table = Airtable(parameters)
+    records = table.get_records()
+    print(records)
 
 
 if __name__ == "__main__":
