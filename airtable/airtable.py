@@ -7,6 +7,16 @@ class Airtable() :
     def __init__(self, parameters) :
         self.parameters = parameters
 
+    def auth(self) :
+        url = [
+            "https://api.airtable.com/v0",
+            self.parameters["base"],
+            self.parameters["table"].replace(" ", "%20")
+            ]
+        api_key = self.parameters["api_key"]
+        url = "/".join(url) + "?api_key=" + api_key
+        return url
+
 def main() :
     parameters = {
         "api_key" : "API_KEY",
