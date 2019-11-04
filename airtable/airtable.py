@@ -43,6 +43,18 @@ class Airtable() :
                 records.append(record)
         return records
 
+    def get_record(self, id) :
+        # Get a specific record in table
+        record = []
+        id = "/" + id
+        self.parameters["table"] += id
+        try :
+            record = requests.get(self.auth()).json()
+        except KeyError as e :
+            print(e)
+        self.parameters["table"] = self.parameters["table"].replace(id, "")
+        return record
+
 def main() :
     parameters = {
         "api_key" : "API_KEY",
@@ -52,7 +64,6 @@ def main() :
     table = Airtable(parameters)
     records = table.get_records()
     print(records)
-
 
 if __name__ == "__main__":
     main()
