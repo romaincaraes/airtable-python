@@ -17,6 +17,17 @@ class Airtable() :
         url = "/".join(url) + "?api_key=" + api_key
         return url
 
+    def get_fields(self) :
+        # Get a list of fields labels in table
+        fields = []
+        try :
+            r = requests.get(self.auth()).json()
+            for field in r["records"][0]["fields"] :
+                fields.append(field.encode('utf-8'))
+        except KeyError as e :
+            print(e)
+        return fields
+
 def main() :
     parameters = {
         "api_key" : "API_KEY",
