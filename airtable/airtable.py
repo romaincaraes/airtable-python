@@ -55,9 +55,16 @@ class Airtable() :
         self.parameters["table"] = self.parameters["table"].replace(id, "")
         return record
 
-    def create_records(self) :
+    def create_records(self, records) :
         # Create new records in table
-        return
+        data = {"records" : []}
+        for record in records :
+            data["records"].append(record)
+        try :
+            r = requests.post(self.auth(), json=data)
+        except KeyError as e :
+            print(e)
+        return r
 
     def update_records(self) :
         # Update records in table
