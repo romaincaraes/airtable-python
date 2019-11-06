@@ -78,9 +78,15 @@ class Airtable() :
             print(e)
         return r
 
-    def delete_records(self) :
+    def delete_records(self, records) :
         # Delete records in table
-        return
+        data = {"records" : []}
+        data["records"] = records
+        try :
+            r = requests.delete(self.auth(), params=records)
+        except KeyError as e :
+            print(e)
+        return r
 
 def main() :
     parameters = {
