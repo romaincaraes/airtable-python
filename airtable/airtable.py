@@ -68,9 +68,15 @@ class Airtable() :
             print(e)
         return r
 
-    def update_records(self) :
+    def update_records(self, records) :
         # Update records in table
-        return
+        data = {"records" : []}
+        data["records"] = records
+        try :
+            r = requests.patch(self.auth(), json=data)
+        except KeyError as e :
+            print(e)
+        return r
 
     def delete_records(self) :
         # Delete records in table
