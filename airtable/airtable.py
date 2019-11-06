@@ -58,10 +58,12 @@ class Airtable() :
     def create_records(self, records) :
         # Create new records in table
         data = {"records" : []}
-        for record in records :
-            data["records"].append(record)
         try :
-            r = requests.post(self.auth(), json=data)
+            rng = [0,10]
+            for i in range(0, len(records)/10 + 1) :
+                data["records"] = records[rng[0]:rng[1]]
+                rng = [x + 10 for x in rng]
+                r = requests.post(self.auth(), json=data)
         except KeyError as e :
             print(e)
         return r
