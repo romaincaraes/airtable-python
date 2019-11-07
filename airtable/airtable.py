@@ -89,14 +89,7 @@ class Airtable() :
         return r
 
 def main() :
-    parameters = {
-        "api_key" : "API_KEY",
-        "base" : "BASE_CODE",
-        "table" : "TABLE_NAME"
-    }
-    table = Airtable(parameters)
-    records = table.get_records()
-    print(records)
+    pass
 
 if __name__ == "__main__":
     main()
