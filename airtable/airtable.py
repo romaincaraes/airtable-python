@@ -45,13 +45,12 @@ class API() :
 
     def get_record(self, id) :
         # Get a specific record in table
-        record = []
         id = "/" + id
         self.parameters["table"] += id
         try :
             record = requests.get(self.auth()).json()
-        except KeyError as e :
-            print(e)
+        except :
+            pass
         self.parameters["table"] = self.parameters["table"].replace(id, "")
         return record
 
