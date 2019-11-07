@@ -22,3 +22,8 @@ Visit the [Standard API Documentation website](https://airtable.com/api) to get 
 
     fields = table.get_fields()
     print(fields)
+
+### Get a list of all records in a table
+
+    records = table.get_records()
+    print(records)
