@@ -27,3 +27,8 @@ Visit the [Standard API Documentation website](https://airtable.com/api) to get 
 
     records = table.get_records()
     print(records)
+
+### Get an existing record in a table
+
+    record = table.get_record("RECORD_ID")
+    print(record)
