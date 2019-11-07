@@ -17,3 +17,8 @@ Visit the [Standard API Documentation website](https://airtable.com/api) to get 
     }
 
     table = airtable.API(parameters)
+
+### Get a list of fields in a table
+
+    fields = table.get_fields()
+    print(fields)
