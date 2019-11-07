@@ -69,8 +69,7 @@ class API() :
 
     def update_records(self, records) :
         # Update records in table
-        data = {"records" : []}
-        data["records"] = records
+        data = {"records" : records}
         try :
             r = requests.patch(self.auth(), json=data)
         except KeyError as e :
