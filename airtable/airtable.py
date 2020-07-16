@@ -4,14 +4,15 @@
 import requests
 
 class API() :
-    def __init__(self, parameters) :
+    def __init__(self, parameters, table) :
         self.parameters = parameters
+        self.table = table
 
     def auth(self) :
         url = [
             "https://api.airtable.com/v0",
             self.parameters["base"],
-            self.parameters["table"].replace(" ", "%20")
+            self.table.replace(" ", "%20")
             ]
         api_key = self.parameters["api_key"]
         url = "/".join(url) + "?api_key=" + api_key
@@ -46,12 +47,12 @@ class API() :
     def get_record(self, id) :
         # Get a specific record in table
         id = "/" + id
-        self.parameters["table"] += id
+        self.table += id
         try :
             record = requests.get(self.auth()).json()
         except :
             pass
-        self.parameters["table"] = self.parameters["table"].replace(id, "")
+        self.table = self.table.replace(id, "")
         return record
 
     def create_records(self, records) :
