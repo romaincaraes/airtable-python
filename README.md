@@ -12,11 +12,10 @@ Visit the [Standard API Documentation website](https://airtable.com/api) to get 
 
     parameters = {
         "api_key" : "API_KEY",
-        "base" : "BASE_CODE",
-        "table" : "TABLE_NAME"
+        "base" : "BASE_CODE"
     }
 
-    table = airtable.API(parameters)
+    table = airtable.API(parameters, "TABLE_NAME")
 
 ### Get a list of fields in a table
 
