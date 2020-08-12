@@ -4,6 +4,14 @@ A Python library for the Airtable API.
 
 ## Getting Started
 
+### Installation
+
+Install with pip directly from the GitHub repository :
+
+    pip install git+https://github.com/romaincaraes/airtable-python.git
+
+## Usage
+
 ### Authentication
 
 Visit the [Standard API Documentation website](https://airtable.com/api) to get your API credentials (API key, base code and table name).
