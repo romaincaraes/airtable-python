@@ -16,25 +16,29 @@ Install with pip directly from the GitHub repository :
 
 Visit the [Standard API Documentation website](https://airtable.com/api) to get your API credentials (API key, base code and table name).
 
-    import airtable
+```python
+import airtable
 
-    parameters = {
-        "api_key" : "API_KEY",
-        "base" : "BASE_CODE"
-    }
+parameters = {
+    "api_key" : "API_KEY",
+    "base" : "BASE_CODE"
+}
 
-    table = airtable.API(parameters, "TABLE_NAME")
-    
+table = airtable.API(parameters, "TABLE_NAME")
+```
+
 ### Get data
 
-	# Get a list of fields in a table
-    fields = table.get_fields()
-    print(fields)
+```python
+# Get a list of fields in a table
+fields = table.get_fields()
+print(fields)
 
-	# Get a list of all records in a table
-    records = table.get_records()
-    print(records)
-    
-	# Get an existing record in a table
-    record = table.get_record("RECORD_ID")
-    print(record)
+# Get a list of all records in a table
+records = table.get_records()
+print(records)
+
+# Get an existing record in a table
+record = table.get_record("RECORD_ID")
+print(record)
+```
