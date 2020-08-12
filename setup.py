@@ -11,7 +11,7 @@ setup(
     license=airtable.__license__,
     author=airtable.__author__,
     author_email="hello@romaincaraes.fr",
-    description="Python wrapper for Airtable API",
+    description="A Python library for the Airtable API",
     long_description=open("README.md").read(),
     url="https://github.com/romaincaraes/airtable-python/",
     packages=find_packages(),
