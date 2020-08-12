@@ -1,6 +1,6 @@
 # Airtable API with Python
 
-A Python library for accessing the Airtable API.
+A Python library for the Airtable API.
 
 ## Getting Started
 
