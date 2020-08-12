@@ -16,18 +16,17 @@ Visit the [Standard API Documentation website](https://airtable.com/api) to get 
     }
 
     table = airtable.API(parameters, "TABLE_NAME")
+    
+### Get data
 
-### Get a list of fields in a table
-
+	# Get a list of fields in a table
     fields = table.get_fields()
     print(fields)
 
-### Get a list of all records in a table
-
+	# Get a list of all records in a table
     records = table.get_records()
     print(records)
-
-### Get an existing record in a table
-
+    
+	# Get an existing record in a table
     record = table.get_record("RECORD_ID")
     print(record)
