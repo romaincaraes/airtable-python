@@ -42,3 +42,27 @@ print(records)
 record = table.get_record("RECORD_ID")
 print(record)
 ```
+
+### Create records
+
+```python
+# Create new records in table
+status = table.create_records(records)
+print(status)
+```
+
+### Update records
+
+```python
+# Update records in table
+status = table.update_records(records)
+print(status)
+```
+
+### Delete records
+
+```python
+# Delete records in table
+status = table.delete_records(records)
+print(status)
+```
